@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Real Estate Portfolio</title>
+    <style>
+        /* General Setup */
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f4f4f4; line-height: 1.6; }
+        
+        .navbar {
+            background: #1a252f;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 500;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            background: #2c3e50;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover { background: #e67e22; }
+
+        /* Section Visibility */
+        .page-section {
+            display: none; 
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .active-section {
+            display: block !important;
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* --- THE SEPARATE WINDOWS (PROJECT BOXES) --- */
+        .project-container {
+            display: flex;
+            flex-direction: column; /* Stacks windows vertically */
+            gap: 25px;              /* Creates space between windows so they don't touch */
+            align-items: center;
+        }
+
+        .project-row-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: white;     /* Clean background for the "window" */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 100%;           /* Responsive width */
+            max-width: 700px;      /* Prevents it from getting too wide */
+            border: 1px solid #ddd;
+        }
+
+        .project-row-item img {
+            width: 400px;
+            height: 200px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid #eee;
+        }
+
+        .project-text {
+            text-align: left;
+            color: #333;
+        }
+
+        .project-text h3 { margin: 0 0 10px 0; color: #2c3e50; }
+        .project-text p { margin: 0; font-size: 0.95rem; color: #666; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .project-row-item { flex-direction: column; text-align: center; }
+            .project-text { text-align: center; }
+            .navbar { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a onclick="openPage('home')">ACTIVE PROJECTS</a>
+        <a onclick="openPage('completed')">COMPLETED PROJECTS </a>
+        <a onclick="openPage('commercial')">COMMERCIAL PROJECTS</a>
+        <a onclick="openPage('residential')">RESIDENTIAL PROJECTS</a>
+    </nav>
+
+    <div id="home" class="page-section active-section">
+        <div style="text-align:center; padding-top: 50px;">
+            <h1>ACTIVE PROJECTS</h1>
+            <p>Select a category from the menu to view our project details.</p>
+        	<div class="project-container">
+		
+		      <div class="project-row-item">
+                <img src="VB.png" alt="Venkatesh Heights">
+                <div class="project-text">
+                    <h3>VENKATESH HEIGHTS KHADAKWASLA, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Khadakwasla.</p>
+                </div>
+            </div>
+		
+	</div>
+		
+		</div>
+		
+    </div>
+
+    <div id="completed" class="page-section">
+        <h2 style="text-align:center; margin-bottom: 30px;">COMPLETED PROJECTS ARCHIVE</h2>
+        
+        <div class="project-container">
+            <div class="project-row-item">
+                <img src="uniqueambegaon.png" alt="Unique Residency">
+                <div class="project-text">
+                    <h3>UNIQUE RESIDENCY VADGAON BK.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Vadgaon BK.</p>
+                </div>
+            </div>
+
+            <div class="project-row-item">
+                <img src="Saiwani_Phase_1.png" alt="Saiwani Ubalenagar">
+                <div class="project-text">
+                    <h3>SAIWANI PHASE 1 UBALENAGAR, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Ubalenagar.</p>
+                </div>
+            </div>
+
+            <div class="project-row-item">
+                <img src="Om_Siddhi.png" alt="Venkatesh Skyline">
+                <div class="project-text">
+                    <h3>||CHAITANYA||OM_SIDDHI KIRKATWADI, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Kirkatwadi.</p>
+                </div>
+            </div>
+			
+			   <div class="project-row-item">
+                <img src="Shivansh_park_dhayari.png" alt="Shivansh Park Dhayari">
+                <div class="project-text">
+                    <h3>SHIVANSH PARK DHAYARI, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Dhayari.</p>
+                </div>
+            </div>
+			
+			
+			   <div class="project-row-item">
+                <img src="Chintamani_hights.png" alt="Chintamani heights Katraj">
+                <div class="project-text">
+                    <h3>CHINTAMANI HEIGHTS KATRAJ, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Katraj.</p>
+                </div>
+            </div>
+			
+			
+			 <div class="project-row-item">
+                <img src="Sarthak_heights.png" alt="Sarthak heights Dhayari, Pune">
+                <div class="project-text">
+                    <h3>SARTHAK HEIGHTS DHAYARI, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Dhayari.</p>
+                </div>
+            </div>
+			
+			
+			 <div class="project-row-item">
+                <img src="Shriram_Heights.png" alt="Shr heights Dhayari, Pune">
+                <div class="project-text">
+                    <h3>SHREERAM HEIGHTS DHAYARI, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Dhayari.</p>
+                </div>
+            </div>
+			
+			
+			
+				 <div class="project-row-item">
+                <img src="Mayarjun_heghts.png" alt="Mayarjun heights Dhayari, Pune">
+                <div class="project-text">
+                    <h3>MAYARJUN HEIGHTS DHAYARI, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Dhayari.</p>
+                </div>
+            </div>
+			
+			
+			
+				 <div class="project-row-item">
+                <img src="Shivrana_silverpark.png" alt="Shivrana Silver Park Nanded Phata, Pune">
+                <div class="project-text">
+                    <h3>SHIVRANA SILVER PARK NANDED PHATA, PUNE</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Nanded Phata.</p>
+                </div>
+            </div>
+			
+			
+			<div class="project-row-item">
+                <img src="Pruthvi_heights.png" alt="Pruthvi Heights Nanded Phata, Pune">
+                <div class="project-text">
+                    <h3>PRUTHVI HEIGHTS NANDED PHATA, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Nanded Phata.</p>
+                </div>
+            </div>
+		<div class="project-row-item">
+                <img src="Sita_Niwas.png" alt="Sita Niwas Khadakwasla, Pune">
+                <div class="project-text">
+                    <h3>SITA NIWAS KHADAKWASLA, PUNE</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Khadakwasla.</p>
+                </div>
+            </div>	
+				<div class="project-row-item">
+                <img src="Ved_Ayush.png" alt="Ved Ayush Nanded Phata, Pune">
+                <div class="project-text">
+                    <h3>VED AYUSH NANDED PHATA, PUNE</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Nanded Phata.</p>
+                </div>
+            </div>		
+			<div class="project-row-item">
+                <img src="Alphine_Hills.png" alt="Alphine Hills Narhe, Pune">
+                <div class="project-text">
+                    <h3>ALPHINE HILLS NARHE, PUNE</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Narhe.</p>
+                </div>
+            </div>	
+			<div class="project-row-item">
+                <img src="Vrundawan_Samira.png" alt="Vrundawan Samira Nanded Phata, Pune">
+                <div class="project-text">
+                    <h3>VRUNDĀVAN SAMIRA NANDED PHATA, PUNE</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Nanded City.</p>
+                </div>
+            </div>
+			
+			<div class="project-row-item">
+                <img src="Sujata_heights.png" alt="Sujata heights Dhayari, Pune">
+                <div class="project-text">
+                    <h3>SUJATA HEIGHTS DHAYARI, PUNE</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Dhayari.</p>
+                </div>
+            </div>
+		<div class="project-row-item">
+                <img src="Baijal_Residency.png" alt="Baijal Residency Ambeghaon Bk, Pune">
+                <div class="project-text">
+                    <h3>BAIJAL RESIDENCY AMBEGHAON BK, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Ambeghaon .</p>
+                </div>
+            </div>
+			
+			
+        </div>
+    </div>
+    <div id="commercial" class="page-section">
+        <h2 style="text-align:center;">Commercial Portfolio</h2>
+		        <div class="project-container">
+		            <div class="project-row-item">
+                <img src="VB.png" alt="Venkatesh Heights">
+                <div class="project-text">
+                    <h3>VENKATESH HEIGHTS KHADAKWASLA, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Khadakwasla.</p>
+                </div>
+            </div>
+
+   <div class="project-row-item">
+                <img src="pktown.png" alt="P.K TOWN">
+                <div class="project-text">
+                    <h3>P.K TOWN NARHE, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Narhe.</p>
+                </div>
+            </div>		
+			<div class="project-row-item">
+                <img src="Saiangan.png" alt="SAI ANGAN">
+                <div class="project-text">
+                    <h3>SAI ANGAN NANDED PHATA, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Nanded phata.</p>
+                </div>
+            </div>
+		<div class="project-row-item">
+                <img src="Pruthvi_heights.png" alt="Pruthvi Heights">
+                <div class="project-text">
+                    <h3>PRUTHVI HEIGHTS NANDED PHATA, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Nanded phata.</p>
+                </div>
+            </div>			
+			<div class="project-row-item">
+                <img src="Shivansh_park_dhayari.png" alt="SHIVANSG PARK">
+                <div class="project-text">
+                    <h3>SHIVANSG PARK DHAYARI, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Dhayari.</p>
+                </div>
+            </div>
+		
+			<div class="project-row-item">
+                <img src="Mayarjun_heghts.png" alt="MAYARJUN HEIGHTS">
+                <div class="project-text">
+                    <h3>MAYARJUN HEIGHTS DHAYARI, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Dhayari.</p>
+                </div>
+            </div>
+		</div>
+    </div>
+</body>
+    <div id="residential" class="page-section">
+        <h2 style="text-align:center;">Residential Portfolio</h2>
+		<div class="project-container">
+		
+		
+		<div class="project-row-item">
+                <img src="uniqueambegaon.png" alt="MAYARJUN HEIGHTS">
+                <div class="project-text">
+                    <h3>UNIQUE RESIDENCY VADGAON BK.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Vadgaon bk.</p>
+                </div>
+            </div>
+		
+		     <div class="project-row-item">
+                <img src="Saiwani_Phase_1.png" alt="Saiwani Ubalenagar">
+                <div class="project-text">
+                    <h3>SAIWANI PHASE 1 UBALENAGAR, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Ubalenagar.</p>
+                </div>
+            </div>
+
+            <div class="project-row-item">
+                <img src="Om_Siddhi.png" alt="Venkatesh Skyline">
+                <div class="project-text">
+                    <h3>||CHAITANYA||OM_SIDDHI KIRKATWADI, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Kirkatwadi.</p>
+                </div>
+            </div>
+			
+			   <div class="project-row-item">
+                <img src="Shivansh_park_dhayari.png" alt="Shivansh Park Dhayari">
+                <div class="project-text">
+                    <h3>SHIVANSH PARK DHAYARI, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Dhayari.</p>
+                </div>
+            </div>
+			
+			
+			   <div class="project-row-item">
+                <img src="Chintamani_hights.png" alt="Chintamani heights Katraj">
+                <div class="project-text">
+                    <h3>CHINTAMANI HEIGHTS KATRAJ, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Katraj.</p>
+                </div>
+            </div>
+			
+			
+			 <div class="project-row-item">
+                <img src="Sarthak_heights.png" alt="Sarthak heights Dhayari, Pune">
+                <div class="project-text">
+                    <h3>SARTHAK HEIGHTS DHAYARI, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Dhayari.</p>
+                </div>
+            </div>
+			
+			
+			 <div class="project-row-item">
+                <img src="Shriram_Heights.png" alt="Shr heights Dhayari, Pune">
+                <div class="project-text">
+                    <h3>SHREERAM HEIGHTS DHAYARI, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Dhayari.</p>
+                </div>
+            </div>
+			
+			
+			
+				 <div class="project-row-item">
+                <img src="Mayarjun_heghts.png" alt="Mayarjun heights Dhayari, Pune">
+                <div class="project-text">
+                    <h3>MAYARJUN HEIGHTS DHAYARI, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Dhayari.</p>
+                </div>
+            </div>
+			
+			
+			
+				 <div class="project-row-item">
+                <img src="Shivrana_silverpark.png" alt="Shivrana Silver Park Nanded Phata, Pune">
+                <div class="project-text">
+                    <h3>SHIVRANA SILVER PARK NANDED PHATA, PUNE</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Nanded Phata.</p>
+                </div>
+            </div>
+			
+			
+			<div class="project-row-item">
+                <img src="Pruthvi_heights.png" alt="Pruthvi Heights Nanded Phata, Pune">
+                <div class="project-text">
+                    <h3>PRUTHVI HEIGHTS NANDED PHATA, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Nanded Phata.</p>
+                </div>
+            </div>
+		<div class="project-row-item">
+                <img src="Sita_Niwas.png" alt="Sita Niwas Khadakwasla, Pune">
+                <div class="project-text">
+                    <h3>SITA NIWAS KHADAKWASLA, PUNE</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Khadakwasla.</p>
+                </div>
+            </div>	
+				<div class="project-row-item">
+                <img src="Ved_Ayush.png" alt="Ved Ayush Nanded Phata, Pune">
+                <div class="project-text">
+                    <h3>VED AYUSH NANDED PHATA, PUNE</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Nanded Phata.</p>
+                </div>
+            </div>		
+			<div class="project-row-item">
+                <img src="Alphine_Hills.png" alt="Alphine Hills Narhe, Pune">
+                <div class="project-text">
+                    <h3>ALPHINE HILLS NARHE, PUNE</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Narhe.</p>
+                </div>
+            </div>	
+			<div class="project-row-item">
+                <img src="Vrundawan_Samira.png" alt="Vrundawan Samira Nanded Phata, Pune">
+                <div class="project-text">
+                    <h3>VRUNDĀVAN SAMIRA NANDED PHATA, PUNE</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Nanded City.</p>
+                </div>
+            </div>
+			
+			<div class="project-row-item">
+                <img src="Sujata_heights.png" alt="Sujata heights Dhayari, Pune">
+                <div class="project-text">
+                    <h3>SUJATA HEIGHTS DHAYARI, PUNE</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Dhayari.</p>
+                </div>
+            </div>
+		<div class="project-row-item">
+                <img src="Baijal_Residency.png" alt="Baijal Residency Ambeghaon Bk, Pune">
+                <div class="project-text">
+                    <h3>BAIJAL RESIDENCY AMBEGHAON BK, PUNE.</h3>
+                    <p>This project features modern architecture and premium amenities located in the heart of Ambeghaon .</p>
+                </div>
+            </div>
+		
+		
+		
+		</div>
+    </div>
+
+    <script>
+        function openPage(pageId) {
+            // Hide all sections
+            var sections = document.getElementsByClassName('page-section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.remove('active-section');
+            }
+            // Show selected section
+            document.getElementById(pageId).classList.add('active-section');
+            window.scrollTo(0, 0);
+        }
+    </script>
+
+</body>
+</html>
