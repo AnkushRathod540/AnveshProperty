@@ -15,23 +15,22 @@
             --text-white: #ffffff;
         }
 
-        /* Fixed width for the entire page to force Desktop View */
+        * { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none !important; }
+
         body { 
             font-family: 'Poppins', sans-serif; 
             line-height: 1.6; 
             background-color: #fff; 
-            min-width: 1200px; /* Forces desktop width */
-            margin: 0;
-            padding: 0;
+            /* Ensures the desktop scale is preserved */
+            min-width: 1200px; 
+            overflow-x: hidden; 
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none !important; }
-
-        /* --- FIXED SOLID PREMIUM NAVBAR --- */
+        /* --- NAVBAR: EDGE TO EDGE --- */
         .navbar {
             position: fixed;
             top: 0; 
-            width: 100%; 
+            width: 100%; /* Stretches end-to-end */
             height: 90px; 
             z-index: 2000;
             display: flex;
@@ -41,34 +40,31 @@
             border-bottom: 3px solid var(--brand-orange);
         }
 
+        /* Keeps content centered within the edge-to-edge bar */
         .nav-wrapper {
-            width: 1200px; /* Fixed width for consistency */
+            width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 30px;
+            padding: 0 20px;
         }
 
-        .logo { flex-shrink: 0; }
         .logo img { 
             height: 60px; 
             width: auto; 
             object-fit: contain;
         }
 
-        /* --- CENTERED GROUP --- */
         .nav-center-group {
             display: flex;
             align-items: center;
-            gap: 25px; /* Spacing as seen on desktop */
-            justify-content: center;
-            flex-grow: 1;
+            gap: 20px; 
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 25px;
             align-items: center;
         }
 
@@ -76,18 +72,16 @@
             color: var(--text-white); 
             font-weight: 600;
             font-size: 13px;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
             display: flex;
             align-items: center;
             gap: 6px;
-            transition: 0.3s ease;
             white-space: nowrap;
         }
 
         .nav-item:hover { color: var(--brand-orange); }
 
-        /* Dropdown Styling */
         .dropdown { position: relative; }
         .dropdown-content {
             display: none;
@@ -99,7 +93,6 @@
             top: 100%;
             padding: 10px 0;
             border-top: 4px solid var(--brand-orange);
-            z-index: 3000;
         }
         .dropdown:hover .dropdown-content { display: block; }
         .dropdown-content a {
@@ -110,36 +103,27 @@
             font-weight: 600;
         }
 
-        /* --- ENQUIRY BUTTON --- */
         .enquiry-cta-btn {
             background: var(--brand-orange);
             color: white;
-            padding: 12px 28px;
+            padding: 12px 24px;
             border-radius: 50px;
             font-weight: 800;
             border: none;
             cursor: pointer;
-            transition: 0.4s ease;
             font-size: 12px;
             text-transform: uppercase;
             box-shadow: 0 5px 15px rgba(245, 124, 32, 0.4);
-            white-space: nowrap;
         }
 
-        .enquiry-cta-btn:hover { 
-            background: white;
-            color: var(--brand-orange);
-            transform: translateY(-2px);
-        }
-
-        /* --- TICKER SECTION --- */
+        /* --- TICKER: EDGE TO EDGE --- */
         .ap-ticker-container {
             margin-top: 90px; 
+            width: 100%; /* Stretches end-to-end */
             background: linear-gradient(90deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
             color: #fff;
             padding: 12px 0;
             overflow: hidden;
-            width: 100%;
         }
         .ap-ticker-content {
             display: inline-block;
@@ -149,11 +133,13 @@
         .ap-ticker-content span { padding: 0 40px; font-weight: 600; font-size: 13px; text-transform: uppercase; }
         @keyframes ap-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO: EDGE TO EDGE --- */
         .hero {
             position: relative;
-            width: 100%; height: 75vh;
-            overflow: hidden; background: #000;
+            width: 100%; /* Stretches end-to-end */
+            height: 75vh;
+            overflow: hidden; 
+            background: #000;
         }
         .hero-video {
             position: absolute; top: 50%; left: 50%;
@@ -168,14 +154,13 @@
         .hero-content h1 {
             font-size: 65px;
             color: #fff; font-weight: 800; letter-spacing: 8px; text-align: center;
-            text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
         }
 
         .hero-subtitle {
+            width: 100%; /* Stretches end-to-end */
             background: #fff; color: #1e293b;
             padding: 20px; text-align: center; font-weight: 700;
             border-bottom: 2px solid #eee; font-size: 18px;
-            width: 100%;
         }
 
         /* --- MODAL --- */
@@ -188,7 +173,6 @@
         }
         .enquiry-form input, .enquiry-form select, .enquiry-form textarea {
             width: 100%; padding: 14px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px;
-            font-family: 'Poppins', sans-serif;
         }
     </style>
 </head>
@@ -220,7 +204,7 @@
                     <div class="dropdown">
                         <a href="#projects" class="nav-item">PROJECTS <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                         <div class="dropdown-content">
-                            <a href="projects.html" style="background: var(--brand-orange); color: white !important; text-align: center; border-radius: 6px; margin: 5px 15px;">EXPLORE PROJECTS</a>
+                            <a href="projects.html" style="background: var(--brand-orange); color: white !important; text-align: center; border-radius: 6px;">EXPLORE PROJECTS</a>
                         </div>
                     </div>
                     <a href="#contact" class="nav-item">CONTACT</a>
@@ -3237,6 +3221,7 @@ We take every career and every property journey seriously, following a well-defi
 </footer>
 </body>
 </html>
+
 
 
 
