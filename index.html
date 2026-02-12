@@ -11,7 +11,8 @@
     <style>
         :root {
             --brand-orange: #f57c20;
-            --navbar-dark: #0f172a; 
+            --brand-gradient: linear-gradient(135deg, #f57c20 0%, #d46514 100%);
+            --navbar-dark: rgba(15, 23, 42, 0.95); 
             --text-white: #ffffff;
         }
 
@@ -25,162 +26,172 @@
             overflow-x: hidden; 
         }
 
-        /* --- NAVBAR: EDGE TO EDGE --- */
+        /* --- MODERN PREMIUM NAVBAR --- */
         .navbar {
             position: fixed;
             top: 0; 
             width: 100%; 
-            height: 90px; 
+            height: 95px; 
             z-index: 2000;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            border-bottom: 3px solid var(--brand-orange);
+            background: var(--navbar-dark);
+            backdrop-filter: blur(10px); /* Glass effect */
+            border-bottom: 4px solid var(--brand-orange);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
         }
 
         .nav-wrapper {
             width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 250px 1fr 250px; /* Logo left, Buttons center, Empty right for balance */
+            grid-template-columns: 280px 1fr 280px; /* Logo | Centered Content | Balance Space */
             align-items: center;
-            padding: 0 20px;
+            padding: 0 30px;
         }
 
         .logo img { 
-            height: 60px; 
+            height: 65px; 
             width: auto; 
-            object-fit: contain;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
+            transition: transform 0.3s ease;
         }
+        .logo img:hover { transform: scale(1.05); }
 
-        /* --- CENTERED GROUP FOR ALL BUTTONS --- */
+        /* --- CENTERED NAV GROUP --- */
         .nav-center-group {
             display: flex;
             align-items: center;
-            gap: 30px; /* Space between the menu and the Enquiry button */
-            justify-content: center; /* This centers everything in the middle column */
+            gap: 40px; 
+            justify-content: center;
         }
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 30px;
             align-items: center;
         }
 
+        /* --- ANIMATED NAV ITEMS --- */
         .nav-item {
             color: var(--text-white); 
             font-weight: 600;
-            font-size: 13px;
-            letter-spacing: 0.5px;
+            font-size: 14px;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            white-space: nowrap;
-            transition: 0.3s;
+            position: relative;
+            padding: 5px 0;
+            transition: 0.3s ease;
+        }
+
+        /* The animated underline effect */
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--brand-orange);
+            transition: width 0.3s ease;
         }
 
         .nav-item:hover { color: var(--brand-orange); }
+        .nav-item:hover::after { width: 100%; }
 
+        /* Dropdown Styling */
         .dropdown { position: relative; }
         .dropdown-content {
             display: none;
             position: absolute;
             background: #ffffff;
-            min-width: 200px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            border-radius: 8px;
-            top: 100%;
-            padding: 10px 0;
-            border-top: 4px solid var(--brand-orange);
+            min-width: 220px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-radius: 12px;
+            top: 130%;
+            padding: 15px 0;
+            border-top: 5px solid var(--brand-orange);
+            animation: slideUp 0.3s ease forwards;
         }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
         .dropdown:hover .dropdown-content { display: block; }
         .dropdown-content a {
-            padding: 12px 20px;
+            padding: 12px 25px;
             display: block;
-            color: #1e293b !important;
+            color: #0f172a !important;
             font-size: 13px;
-            font-weight: 600;
+            font-weight: 700;
+            transition: 0.2s;
         }
+        .dropdown-content a:hover { background: #f8f9fa; color: var(--brand-orange) !important; padding-left: 30px; }
 
+        /* --- GLOWING ENQUIRY BUTTON --- */
         .enquiry-cta-btn {
-            background: var(--brand-orange);
+            background: var(--brand-gradient);
             color: white;
-            padding: 12px 28px;
+            padding: 14px 32px;
             border-radius: 50px;
             font-weight: 800;
             border: none;
             cursor: pointer;
             font-size: 12px;
             text-transform: uppercase;
-            box-shadow: 0 5px 15px rgba(245, 124, 32, 0.4);
-            transition: 0.3s;
+            box-shadow: 0 0 20px rgba(245, 124, 32, 0.5);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .enquiry-cta-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(245, 124, 32, 0.7);
             background: white;
             color: var(--brand-orange);
-            transform: scale(1.05);
         }
 
-        /* --- TICKER: EDGE TO EDGE --- */
+        /* --- TICKER --- */
         .ap-ticker-container {
-            margin-top: 90px; 
+            margin-top: 95px; 
             width: 100%; 
-            background: linear-gradient(90deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+            background: #1e1b4b;
             color: #fff;
-            padding: 12px 0;
-            overflow: hidden;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .ap-ticker-content {
-            display: inline-block;
-            white-space: nowrap;
-            animation: ap-scroll 35s linear infinite;
-        }
-        .ap-ticker-content span { padding: 0 40px; font-weight: 600; font-size: 13px; text-transform: uppercase; }
-        @keyframes ap-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .ap-ticker-content span { padding: 0 40px; font-weight: 600; font-size: 13px; text-transform: uppercase; color: #cbd5e1; }
+        .ap-ticker-content span i { color: var(--brand-orange); margin-right: 8px; }
 
-        /* --- HERO: EDGE TO EDGE --- */
+        /* --- HERO --- */
         .hero {
             position: relative;
-            width: 100%; 
-            height: 75vh;
+            width: 100%; height: 75vh;
             overflow: hidden; 
-            background: #000;
         }
         .hero-video {
             position: absolute; top: 50%; left: 50%;
             transform: translate(-50%, -50%);
             min-width: 100%; min-height: 100%;
-            object-fit: cover; opacity: 0.7;
-        }
-        .hero-content {
-            position: relative; z-index: 2; height: 100%;
-            display: flex; justify-content: center; align-items: center;
+            object-fit: cover; opacity: 0.75;
         }
         .hero-content h1 {
-            font-size: 65px;
-            color: #fff; font-weight: 800; letter-spacing: 8px; text-align: center;
+            font-size: 75px;
+            color: #fff; font-weight: 900; letter-spacing: 12px; text-align: center;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.8);
         }
 
         .hero-subtitle {
             width: 100%; 
             background: #fff; color: #1e293b;
-            padding: 20px; text-align: center; font-weight: 700;
-            border-bottom: 2px solid #eee; font-size: 18px;
+            padding: 25px; text-align: center; font-weight: 700;
+            border-bottom: 2px solid #eee; font-size: 20px;
+            letter-spacing: 2px;
         }
 
         /* --- MODAL --- */
-        .enquiry-modal {
-            display: none; position: fixed; z-index: 9999; inset: 0;
-            background: rgba(0,0,0,0.9); align-items: center; justify-content: center;
-        }
         .enquiry-modal-content {
-            background: white; padding: 40px; border-radius: 20px; width: 420px;
-        }
-        .enquiry-form input, .enquiry-form select, .enquiry-form textarea {
-            width: 100%; padding: 14px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px;
+            background: white; padding: 50px; border-radius: 30px; width: 450px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
     </style>
 </head>
@@ -194,31 +205,37 @@
 
             <div class="nav-center-group">
                 <div class="nav-links">
-                    <a href="#home" class="nav-item">HOME</a>
+                    <a href="#home" class="nav-item">Home</a>
+                    
                     <div class="dropdown">
-                        <a href="#about" class="nav-item">ABOUT <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
+                        <a href="#about" class="nav-item">About <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 3px;"></i></a>
                         <div class="dropdown-content">
-                            <a href="#about">WHO WE ARE</a>
-                            <a href="#team">OUR TEAM</a>
+                            <a href="#about"><i class="fas fa-info-circle"></i> Who We Are</a>
+                            <a href="#team"><i class="fas fa-users"></i> Our Team</a>
                         </div>
                     </div>
+
                     <div class="dropdown">
-                        <a href="#services" class="nav-item">SERVICES <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
+                        <a href="#services" class="nav-item">Services <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 3px;"></i></a>
                         <div class="dropdown-content">
-                            <a href="#Home_Loan">HOME LOANS</a>
-                            <a href="#P_loan">PERSONAL LOANS</a>
+                            <a href="#Home_Loan"><i class="fas fa-home"></i> Home Loans</a>
+                            <a href="#P_loan"><i class="fas fa-hand-holding-usd"></i> Personal Loans</a>
                         </div>
                     </div>
+
                     <div class="dropdown">
-                        <a href="#projects" class="nav-item">PROJECTS <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
+                        <a href="#projects" class="nav-item">Projects <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 3px;"></i></a>
                         <div class="dropdown-content">
-                            <a href="projects.html" style="background: var(--brand-orange); color: white !important; text-align: center; border-radius: 6px;">EXPLORE PROJECTS</a>
+                            <a href="projects.html" style="background: var(--brand-orange); color: white !important; border-radius: 8px; margin: 0 10px; text-align: center;">Explore All</a>
                         </div>
                     </div>
-                    <a href="#contact" class="nav-item">CONTACT</a>
+
+                    <a href="#contact" class="nav-item">Contact</a>
                 </div>
 
-                <button class="enquiry-cta-btn" onclick="toggleModal(true)">ENQUIRY NOW</button>
+                <button class="enquiry-cta-btn" onclick="toggleModal(true)">
+                    Enquiry Now
+                </button>
             </div>
             
             <div></div>
@@ -226,11 +243,12 @@
     </nav>
 
     <div class="ap-ticker-container">
-        <div class="ap-ticker-content">
-            <span>🚀 New Premium Projects Launching in Pune</span>
-            <span>🏠 Luxury Apartments: 1, 2 & 3 BHK</span>
-            <span>📞 Contact: +91 9130030046</span>
-            <span>🚀 New Premium Projects Launching in Pune</span>
+        <div class="ap-ticker-content" style="display: inline-block; white-space: nowrap; animation: ap-scroll 35s linear infinite;">
+            <span><i class="fas fa-rocket"></i> New Premium Projects Launching in Pune</span>
+            <span><i class="fas fa-building"></i> Luxury Apartments: 1, 2 & 3 BHK</span>
+            <span><i class="fas fa-phone-alt"></i> Contact: +91 9130030046</span>
+            <span><i class="fas fa-check-circle"></i> Approved Finance Partners</span>
+            <span><i class="fas fa-rocket"></i> New Premium Projects Launching in Pune</span>
         </div>
     </div>
 
@@ -239,31 +257,31 @@
             <source src="https://media.istockphoto.com/id/1479313083/video/4k-aerial-view-real-time-footage-of-above-captain-cook-bridge-pacific-and-riverside.mp4?s=mp4-640x640-is&k=20&c=1fagShgRX86WyOXiuZY9SKLYrmQJM2eK64JJgrw_CQE=" type="video/mp4">
         </video>
         <div class="hero-content">
-            <h1>ANVESH PROPERTIES</h1>
+            <h1 style="animation: fadeIn 1.5s ease;">ANVESH PROPERTIES</h1>
         </div>
     </header>
 
     <div class="hero-subtitle">
-        Builders | Construction | Sale & Selling | Plotting | Finance
+        BUILDERS | CONSTRUCTION | PLOTTING | FINANCE
     </div>
 
-    <div id="enquiryModal" class="enquiry-modal">
+    <div id="enquiryModal" class="enquiry-modal" style="display: none; position: fixed; z-index: 9999; inset: 0; background: rgba(0,0,0,0.9); align-items: center; justify-content: center;">
         <div class="enquiry-modal-content">
-            <h2 style="color: var(--brand-orange); margin-bottom: 20px; font-weight: 800;">Get In Touch</h2>
+            <h2 style="color: var(--brand-orange); margin-bottom: 25px; font-weight: 800; text-align: center; font-size: 28px;">Request a Callback</h2>
             <form id="waForm" class="enquiry-form">
-                <input type="text" id="name" placeholder="Full Name" required>
-                <input type="tel" id="phone" placeholder="Mobile Number" required>
-                <select id="service">
+                <input type="text" id="name" placeholder="Full Name" required style="width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #eee; border-radius: 10px;">
+                <input type="tel" id="phone" placeholder="Mobile Number" required style="width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #eee; border-radius: 10px;">
+                <select id="service" style="width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #eee; border-radius: 10px;">
                     <option value="Home Loan">Home Loan</option>
                     <option value="Plots">Buying Plots</option>
                     <option value="Residential">Residential Flats</option>
                 </select>
-                <textarea id="msg" rows="3" placeholder="Message"></textarea>
-                <button type="submit" style="background:#25D366; color:white; width:100%; padding:14px; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">
-                    CONTACT VIA WHATSAPP
+                <textarea id="msg" rows="3" placeholder="How can we help you?" style="width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #eee; border-radius: 10px;"></textarea>
+                <button type="submit" style="background:#25D366; color:white; width:100%; padding:18px; border:none; border-radius:12px; font-weight:bold; cursor:pointer; font-size: 16px;">
+                    <i class="fab fa-whatsapp"></i> SEND VIA WHATSAPP
                 </button>
             </form>
-            <button onclick="toggleModal(false)" style="margin-top: 10px; background: none; border: none; color: gray; cursor: pointer; width: 100%;">Close</button>
+            <button onclick="toggleModal(false)" style="margin-top: 20px; background: none; border: none; color: #999; cursor: pointer; width: 100%; font-weight: 600;">DISMISS</button>
         </div>
     </div>
 
@@ -274,11 +292,7 @@
 
         document.getElementById('waForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const service = document.getElementById('service').value;
-            const msg = document.getElementById('msg').value;
-            const text = `*Enquiry from Website*%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Service:* ${service}%0A*Message:* ${msg}`;
+            const text = `*Enquiry from Website*%0A*Name:* ${document.getElementById('name').value}%0A*Phone:* ${document.getElementById('phone').value}%0A*Service:* ${document.getElementById('service').value}%0A*Message:* ${document.getElementById('msg').value}`;
             window.open(`https://wa.me/919130030046?text=${text}`, '_blank');
         });
     </script>
@@ -3231,6 +3245,7 @@ We take every career and every property journey seriously, following a well-defi
 </footer>
 </body>
 </html>
+
 
 
 
