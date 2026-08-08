@@ -307,18 +307,19 @@
 
 	
 <style>
-    /* Ticker Bar Styling (Positioned normally between navbar and hero) */
+    /* 1. TICKER BAR STYLING (Normal flow, sits between navbar & hero) */
     .ticker-bar {
-        background-color: #333333 !important; /* Dark background */
-        color: #ffffff !important;
-        height: 38px !important;
+        position: relative !important; /* Removes fixed top positioning */
+        top: auto !important;
         width: 100% !important;
+        height: 38px !important;
+        background-color: #f47721 !important; /* Orange background matching your theme */
+        color: #ffffff !important;
         overflow: hidden !important;
-        position: relative !important;
         display: flex !important;
         align-items: center !important;
         z-index: 10 !important;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
     }
 
     .ticker-track {
@@ -336,36 +337,85 @@
         display: inline-flex !important;
         align-items: center !important;
         gap: 8px !important;
-        padding: 0 30px !important;
+        padding: 0 25px !important;
         font-size: 13px !important;
         font-weight: 600 !important;
         color: #ffffff !important;
     }
 
     .ticker-item a {
-        color: #f47721 !important;
+        color: #ffffff !important;
         text-decoration: underline !important;
     }
 
     .ticker-item i {
-        color: #f47721 !important;
+        color: #ffffff !important;
     }
 
-    /* Continuous Loop Animation */
     @keyframes ticker-scroll {
-        0% {
-            transform: translate3d(0, 0, 0);
-        }
-        100% {
-            transform: translate3d(-100%, 0, 0);
-        }
+        0% { transform: translate3d(0, 0, 0); }
+        100% { transform: translate3d(-100%, 0, 0); }
+    }
+
+    /* 2. HERO VIDEO FIX (Ensures video renders with full height & visibility) */
+    .hero {
+        position: relative !important;
+        width: 100% !important;
+        min-height: 80vh !important; /* Gives full height to display video */
+        overflow: hidden !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background-color: #111111 !important; /* Fallback dark bg while video loads */
+    }
+
+    .hero-video {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        min-width: 100% !important;
+        min-height: 100% !important;
+        width: auto !important;
+        height: auto !important;
+        transform: translate(-50%, -50%) !important;
+        object-fit: cover !important;
+        z-index: 1 !important;
+    }
+
+    .hero-overlay {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(0, 0, 0, 0.4) !important; /* Dark tint over video */
+        z-index: 2 !important;
+    }
+
+    .hero-content {
+        position: relative !important;
+        z-index: 3 !important;
+        color: #ffffff !important;
+        text-align: center !important;
+    }
+
+    .hero-content h1 {
+        font-size: 48px !important;
+        font-weight: 800 !important;
+        letter-spacing: 2px !important;
+        margin: 0 !important;
     }
 </style>
 
-<!-- 1. YOUR EXISTING NAVBAR / HEADER GOES HERE ABOVE THE TICKER -->
+<!-- ==================================================== -->
+<!-- PLACE CODE IN THIS EXACT ORDER IN YOUR HTML BODY -->
+<!-- ==================================================== -->
+
+<!-- 1. YOUR NAVIGATION BAR (ALREADY ON YOUR SITE) -->
+<!-- <nav> ... HOME ABOUT SERVICES OUR PROJECTS CONTACT CERTIFICATE [ENQUIRY NOW] ... </nav> -->
 
 
-<!-- 2. PLACE THE TICKER DIRECTLY BELOW YOUR NAVBAR -->
+<!-- 2. TICKER BAR (Place right after your navbar) -->
 <div class="ticker-bar">
     <div class="ticker-track">
         <span class="ticker-item"><i class="fas fa-rocket"></i> New Premium Projects Launching in Pune</span>
@@ -381,7 +431,7 @@
 </div>
 
 
-<!-- 3. HERO VIDEO SECTION GOES HERE BELOW THE TICKER -->
+<!-- 3. HERO VIDEO SECTION (Place right below the ticker bar) -->
 <header class="hero">
     <div class="hero-overlay"></div>
     <video autoplay muted loop playsinline class="hero-video">
@@ -391,7 +441,6 @@
         <h1>ANVESH PROPERTIES</h1>
     </div>
 </header>
-
 
 
 
