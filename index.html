@@ -569,8 +569,19 @@ header.hero {
 
 
 
-  <!-- FLOATING ENQUIRY FORM OVERLAY -->
-	<header class="hero">
+<header class="hero">
+    <div class="hero-overlay"></div>
+
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="your-video-file.mp4" type="video/mp4">
+    </video>
+
+    <!-- Main Title -->
+    <div class="hero-content">
+        <h1>ANVESH PROPERTIES</h1>
+    </div>
+
+    <!-- FLOATING ENQUIRY FORM (Must be inside <header class="hero">) -->
     <div class="hero-enquiry-card">
         <h3>REQUEST A CALLBACK</h3>
         <form>
@@ -580,6 +591,22 @@ header.hero {
         </form>
     </div>
 </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
     <script>
         function toggleModal(show) {
             document.getElementById('enquiryModal').style.display = show ? 'flex' : 'none';
