@@ -231,6 +231,118 @@
 
 
 
+
+
+
+/* Page layout */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* TICKER BELOW NAV/BUTTONS */
+.ticker-bar {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: 40px !important;
+    background: #333333 !important;
+    color: #ffffff !important;
+    overflow: hidden !important;
+    position: relative !important;
+    z-index: 99 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Moving ticker */
+.ticker-track {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    padding-left: 100% !important;
+    animation: ticker-scroll 25s linear infinite !important;
+}
+
+.ticker-bar:hover .ticker-track {
+    animation-play-state: paused !important;
+}
+
+.ticker-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 0 30px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #fff !important;
+}
+
+.ticker-item i {
+    color: #f47721 !important;
+}
+
+.ticker-item a {
+    color: #f47721 !important;
+    text-decoration: underline !important;
+}
+
+/* Animation */
+@keyframes ticker-scroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+/* HERO VIDEO */
+header.hero {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: 80vh !important;
+    min-height: 500px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.hero-video {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 1 !important;
+}
+
+.hero-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+    z-index: 2 !important;
+}
+
+.hero-content {
+    position: relative !important;
+    z-index: 3 !important;
+    color: #fff !important;
+    text-align: center !important;
+}
+				
+
+
+
+
+
 				
 
 
