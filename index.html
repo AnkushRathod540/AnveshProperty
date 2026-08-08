@@ -115,53 +115,69 @@
         @keyframes ap-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
         /* --- HERO SECTION (FIXED VISIBILITY) --- */
-        .hero {
-            position: relative;
-            width: 100%; 
-            height: 75vh;
-            display: flex; /* Centers content */
-            align-items: center;
-            justify-content: center;
-            background: #000; /* Fallback background */
-        }
+      <style>
+    /* Remove browser default margins & side gaps */
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
 
-        .hero-video {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            object-fit: cover;
-            opacity: 0.6; /* Reduced opacity to make white text stand out */
-            z-index: 1;
-        }
+    /* Full-Screen Hero Container */
+    header.hero {
+        position: relative !important;
+        width: 100vw !important; /* Full screen width */
+        height: 100vh !important; /* Full screen height */
+        min-height: 100vh !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background-color: #000000 !important;
+    }
 
-        /* The Overlay makes text readable regardless of video brightness */
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.2); 
-            z-index: 2;
-        }
+    /* Force video to cover the entire container seamlessly */
+    .hero-video {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        min-width: 100% !important;
+        min-height: 100% !important;
+        width: 100% !important;
+        height: 100% !important;
+        transform: translate(-50%, -50%) !important;
+        object-fit: cover !important; /* Stretches/crops video proportionally to remove white bars */
+        z-index: 1 !important;
+    }
 
-        .hero-content {
-            position: relative;
-            z-index: 10; /* Ensures text is above video and overlay */
-            text-align: center;
-            width: 100%;
-            padding: 0 20px;
-        }
+    .hero-overlay {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(0, 0, 0, 0.35) !important;
+        z-index: 2 !important;
+    }
 
-        .hero-content h1 {
-            font-size: 85px;
-            color: #ffffff; 
-            font-weight: 900; 
-            letter-spacing: 15px; 
-            text-transform: uppercase;
-            margin: 0;
-            /* Strong shadow helps visibility on moving images */
-            text-shadow: 0 4px 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.4);
-            animation: fadeInDown 1.5s ease;
-        }
+    .hero-content {
+        position: relative !important;
+        z-index: 3 !important;
+        color: #ffffff !important;
+        text-align: center !important;
+    }
+
+    .hero-content h1 {
+        font-size: 56px !important;
+        font-weight: 800 !important;
+        letter-spacing: 3px !important;
+        margin: 0 !important;
+        text-transform: uppercase !important;
+    }
+</style>
 
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-30px); }
