@@ -177,9 +177,14 @@
         margin: 0 !important;
         text-transform: uppercase !important;
     }
-</style>
 
-        @keyframes fadeInDown {
+
+
+
+
+
+		
+		        @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-30px); }
             to { opacity: 1; transform: translateY(0); }
         }
@@ -198,6 +203,16 @@
         .enquiry-modal { display: none; position: fixed; z-index: 9999; inset: 0; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
         .enquiry-modal-content { background: white; padding: 50px; border-radius: 30px; width: 450px; }
     </style>
+
+
+
+
+
+
+		
+
+
+
 </head>
 <body>
 
@@ -491,7 +506,27 @@
 
 
 
+  <!-- FLOATING ENQUIRY FORM OVERLAY -->
+    <div class="hero-enquiry-card">
+        <h3>REQUEST A CALLBACK</h3>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="tel" placeholder="Mobile Number" required>
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+</header>
+    <script>
+        function toggleModal(show) {
+            document.getElementById('enquiryModal').style.display = show ? 'flex' : 'none';
+        }
 
+        document.getElementById('waForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const text = `*Enquiry from Website*%0A*Name:* ${document.getElementById('name').value}%0A*Phone:* ${document.getElementById('phone').value}%0A*Service:* ${document.getElementById('service').value}%0A*Message:* ${document.getElementById('msg').value}`;
+            window.open(`https://wa.me/919130030046?text=${text}`, '_blank');
+        });
+    </script>
 
 
 
