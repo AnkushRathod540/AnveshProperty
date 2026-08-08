@@ -468,26 +468,29 @@
         BUILDERS | CONSTRUCTION | PLOTTING | FINANCE
     </div>
 
-    <div id="enquiryModal" class="enquiry-modal">
-        <div class="enquiry-modal-content">
-            <h2 style="color: var(--brand-orange); margin-bottom: 25px; text-align: center;">Request a Callback</h2>
-            <form id="waForm">
-                <input type="text" id="name" placeholder="Full Name" required style="width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 10px; border: 1px solid #ddd;">
-                <input type="tel" id="phone" placeholder="Mobile Number" required style="width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 10px; border: 1px solid #ddd;">
-                <select id="service" style="width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 10px;">
-                    <option value="Home Loan">Home Loan</option>
-                    <option value="Plots">Buying Plots</option>
-                    <option value="Residential">Residential Flats</option>
-                </select>
-                <textarea id="msg" rows="3" placeholder="How can we help you?" style="width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 10px; border: 1px solid #ddd;"></textarea>
-                <button type="submit" style="background:#25D366; color:white; width:100%; padding:18px; border:none; border-radius:12px; font-weight:bold; cursor:pointer;">
-                    <i class="fab fa-whatsapp"></i> SEND VIA WHATSAPP
-                </button>
-            </form>
-            <button onclick="toggleModal(false)" style="margin-top: 20px; background: none; border: none; color: #999; cursor: pointer; width: 100%;">DISMISS</button>
-        </div>
+   <header class="hero">
+    <div class="hero-overlay"></div>
+
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="your-video-file.mp4" type="video/mp4">
+    </video>
+
+    <!-- Main Title Content -->
+    <div class="hero-content">
+        <h1>ANVESH PROPERTIES</h1>
+        <p class="subtitle">BUILDERS | CONSTRUCTION | PLOTTING | FINANCE</p>
     </div>
 
+    <!-- FLOATING ENQUIRY FORM OVERLAY -->
+    <div class="hero-enquiry-card">
+        <h3>REQUEST A CALLBACK</h3>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="tel" placeholder="Mobile Number" required>
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+</header>
     <script>
         function toggleModal(show) {
             document.getElementById('enquiryModal').style.display = show ? 'flex' : 'none';
