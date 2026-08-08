@@ -307,20 +307,18 @@
 
 	
 <style>
-    /* Fixed Top Ticker Bar */
-    .top-ticker-wrapper {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 38px !important;
-        background-color: #f47721 !important; /* Brand orange so it stands out clearly */
+    /* Ticker Bar Styling (Positioned normally between navbar and hero) */
+    .ticker-bar {
+        background-color: #333333 !important; /* Dark background */
         color: #ffffff !important;
-        z-index: 999999 !important; /* Forces ticker to sit above header */
+        height: 38px !important;
+        width: 100% !important;
         overflow: hidden !important;
+        position: relative !important;
         display: flex !important;
         align-items: center !important;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+        z-index: 10 !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
     }
 
     .ticker-track {
@@ -330,7 +328,7 @@
         animation: ticker-scroll 25s linear infinite !important;
     }
 
-    .top-ticker-wrapper:hover .ticker-track {
+    .ticker-bar:hover .ticker-track {
         animation-play-state: paused !important;
     }
 
@@ -345,20 +343,15 @@
     }
 
     .ticker-item a {
-        color: #ffffff !important;
+        color: #f47721 !important;
         text-decoration: underline !important;
     }
 
     .ticker-item i {
-        color: #ffffff !important;
+        color: #f47721 !important;
     }
 
-    /* Push down your navigation header so the ticker doesn't cover your menu */
-    header, nav, .navbar, .header {
-        margin-top: 38px !important;
-    }
-
-    /* Continuous Marquee Animation */
+    /* Continuous Loop Animation */
     @keyframes ticker-scroll {
         0% {
             transform: translate3d(0, 0, 0);
@@ -369,8 +362,11 @@
     }
 </style>
 
-<!-- Place this at the very top of your <body> tag -->
-<div class="top-ticker-wrapper">
+<!-- 1. YOUR EXISTING NAVBAR / HEADER GOES HERE ABOVE THE TICKER -->
+
+
+<!-- 2. PLACE THE TICKER DIRECTLY BELOW YOUR NAVBAR -->
+<div class="ticker-bar">
     <div class="ticker-track">
         <span class="ticker-item"><i class="fas fa-rocket"></i> New Premium Projects Launching in Pune</span>
         <span class="ticker-item"><i class="fas fa-building"></i> RERA NO: A031262400060</span>
@@ -384,6 +380,17 @@
     </div>
 </div>
 
+
+<!-- 3. HERO VIDEO SECTION GOES HERE BELOW THE TICKER -->
+<header class="hero">
+    <div class="hero-overlay"></div>
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="https://media.istockphoto.com/id/1479313083/video/4k-aerial-view-real-time-footage-of-above-captain-cook-bridge-pacific-and-riverside.mp4?s=mp4-640x640-is&k=20&c=1fagShgRX86WyOXiuZY9SKLYrmQJM2eK64JJgrw_CQE=" type="video/mp4">
+    </video>
+    <div class="hero-content">
+        <h1>ANVESH PROPERTIES</h1>
+    </div>
+</header>
 
 
 
