@@ -738,63 +738,46 @@ header.hero {
 <!-- POPUP JAVASCRIPT -->
 <script>
 
-function openEnquiryForm() {
-
-    document.getElementById("enquiryModal").style.display = "flex";
-
-    document.body.style.overflow = "hidden";
-
-}
-
-
-function closeEnquiryForm() {
-
-    document.getElementById("enquiryModal").style.display = "none";
-
-    document.body.style.overflow = "auto";
-
-}
-
-
-/* Close popup when clicking outside */
-
-window.addEventListener("click", function(event) {
-
-    const modal = document.getElementById("enquiryModal");
-
-    if (event.target === modal) {
-
-        closeEnquiryForm();
-
-    }
-
-});
-
-
-/* Close popup using ESC key */
-
-document.addEventListener("keydown", function(event) {
-
-    if (event.key === "Escape") {
-
-        closeEnquiryForm();
-
-    }
-
-});
-
-
-/* Form submit */
-
 document.getElementById("propertyEnquiryForm").addEventListener("submit", function(event) {
 
     event.preventDefault();
 
-    alert("Thank you! Your property enquiry has been submitted.");
+    // Get form values
+    const name = document.querySelector('[name="name"]').value;
+    const phone = document.querySelector('[name="phone"]').value;
+    const email = document.querySelector('[name="email"]').value;
+    const enquiryType = document.querySelector('[name="enquiry_type"]').value;
+    const propertyType = document.querySelector('[name="property_type"]').value;
+    const budget = document.querySelector('[name="budget"]').value;
+    const location = document.querySelector('[name="location"]').value;
+    const message = document.querySelector('[name="message"]').value;
 
-    this.reset();
+    // Create WhatsApp message
+    const whatsappMessage =
+`*NEW PROPERTY ENQUIRY*
 
-    closeEnquiryForm();
+*Name:* ${name}
+*Phone:* ${phone}
+*Email:* ${email}
+
+*Enquiry Type:* ${enquiryType}
+*Property Type:* ${propertyType}
+*Budget:* ${budget}
+*Preferred Location:* ${location}
+
+*Message:*
+${message}`;
+
+    // Your WhatsApp number
+    const whatsappNumber = "918001900148";
+
+    // Create WhatsApp URL
+    const whatsappURL =
+        "https://wa.me/" + whatsappNumber +
+        "?text=" + encodeURIComponent(whatsappMessage);
+
+    // Open WhatsApp
+    window.open(whatsappURL, "_blank");
 
 });
 
