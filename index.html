@@ -160,7 +160,37 @@
     display: block !important;
     z-index: 1 !important;
 }
+/* REMOVE RIGHT SIDE GAP - FULL WIDTH HERO */
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+}
 
+header.hero {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+.hero-video {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 100vw !important;
+    height: 100% !important;
+    min-width: 100vw !important;
+    min-height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translate(-50%, -50%) !important;
+    object-fit: cover !important;
+}
     .hero-overlay {
         position: absolute !important;
         top: 0 !important;
