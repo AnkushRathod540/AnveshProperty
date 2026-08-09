@@ -1224,47 +1224,9 @@ document.getElementById("propertyEnquiryForm").addEventListener(
 
 </script>
 					
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
 	
 </button>
 			
-
-
-
-
-
-				
-
-
-
-
-
-
 
 
 			
@@ -1272,112 +1234,58 @@ document.getElementById("propertyEnquiryForm").addEventListener(
         </div>
     </nav>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 	
 <!-- 1. CSS STYLES (MUST BE INSIDE <style> TAGS) -->
 <style>
-    /* Ticker Styling */
-    .ticker-bar {
-        width: 100% !important;
-        height: 38px !important;
-        background-color: #f47721 !important; /* Orange ticker bar */
-        color: #ffffff !important;
-        overflow: hidden !important;
-        position: relative !important;
-        display: flex !important;
-        align-items: center !important;
-        z-index: 10 !important;
-        margin: 0 !important;
+.anvesh-ticker {
+    width: 100%;
+    height: 38px;
+    background: #f47721;
+    color: #ffffff;
+    overflow: hidden;
+    position: relative;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.anvesh-ticker-track {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: anveshTicker 25s linear infinite;
+}
+
+.anvesh-ticker:hover .anvesh-ticker-track {
+    animation-play-state: paused;
+}
+
+.anvesh-ticker-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 30px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.anvesh-ticker-item a {
+    color: #ffffff !important;
+    text-decoration: underline;
+}
+
+@keyframes anveshTicker {
+    from {
+        transform: translateX(100%);
     }
 
-    .ticker-track {
-        display: inline-block !important;
-        white-space: nowrap !important;
-        padding-left: 100% !important;
-        animation: ticker-scroll 25s linear infinite !important;
+    to {
+        transform: translateX(-100%);
     }
-
-    .ticker-bar:hover .ticker-track {
-        animation-play-state: paused !important;
-    }
-
-    .ticker-item {
-        display: inline-flex !important;
-        align-items: center !important;
-        gap: 8px !important;
-        padding: 0 25px !important;
-        font-size: 13px !important;
-        font-weight: 600 !important;
-        color: #ffffff !important;
-    }
-
-    .ticker-item a {
-        color: #ffffff !important;
-        text-decoration: underline !important;
-    }
-
-    .ticker-item i {
-        color: #ffffff !important;
-    }
-
-    @keyframes ticker-scroll {
-        0% { transform: translate3d(0, 0, 0); }
-        100% { transform: translate3d(-100%, 0, 0); }
-    }
-
-    /* Hero Video Section Fix */
-    header.hero {
-        position: relative !important;
-        width: 100% !important;
-        min-height: 80vh !important;
-        overflow: hidden !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        background-color: #111111 !important;
-    }
-
-    .hero-video {
-        position: absolute !important;
-        top: 50% !important;
-        left: 50% !important;
-        min-width: 100% !important;
-        min-height: 100% !important;
-        width: auto !important;
-        height: auto !important;
-        transform: translate(-50%, -50%) !important;
-        object-fit: cover !important;
-        z-index: 1 !important;
-    }
-
-    .hero-overlay {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        background: rgba(0, 0, 0, 0.4) !important;
-        z-index: 2 !important;
-    }
-
-    .hero-content {
-        position: relative !important;
-        z-index: 3 !important;
-        color: #ffffff !important;
-        text-align: center !important;
-    }
+}
 </style>
 
 <!-- ==================================================== -->
@@ -1385,32 +1293,57 @@ document.getElementById("propertyEnquiryForm").addEventListener(
 <!-- ==================================================== -->
 
 <!-- TICKER (Sits below buttons, above video) -->
-<div class="ticker-bar">
-    <div class="ticker-track">
-        <span class="ticker-item"><i class="fas fa-rocket"></i> New Premium Projects Launching in Pune</span>
-        <span class="ticker-item"><i class="fas fa-building"></i> RERA NO: A031262400060</span>
-        <span class="ticker-item">
-            <i class="fas fa-globe"></i>
-            <a href="https://anveshproperties.com" target="_blank">www.anveshproperties.com</a>
+<div class="anvesh-ticker">
+    <div class="anvesh-ticker-track">
+
+        <span class="anvesh-ticker-item">
+            🚀 New Premium Projects Launching in Pune
         </span>
-        <span class="ticker-item"><i class="fas fa-building"></i> Luxury Apartments: 1, 2 & 3 BHK</span>
-        <span class="ticker-item"><i class="fas fa-phone-alt"></i> Contact: +91 9130030046</span>
-        <span class="ticker-item"><i class="fas fa-check-circle"></i> Approved Finance Partners</span>
+
+        <span class="anvesh-ticker-item">
+            🏢 RERA NO: A031262400060
+        </span>
+
+        <span class="anvesh-ticker-item">
+            🌐
+            <a href="https://anveshproperties.com" target="_blank">
+                www.anveshproperties.com
+            </a>
+        </span>
+
+        <span class="anvesh-ticker-item">
+            🏠 Luxury Apartments: 1, 2 & 3 BHK
+        </span>
+
+        <span class="anvesh-ticker-item">
+            📞 Contact: +91 9130030046
+        </span>
+
+        <span class="anvesh-ticker-item">
+            ✓ Approved Finance Partners
+        </span>
+
     </div>
 </div>
 
 <!-- HERO VIDEO SECTION -->
+<div class="anvesh-ticker">
+    ...
+</div>
+
 <header class="hero">
+
     <div class="hero-overlay"></div>
+
     <video autoplay muted loop playsinline preload="auto" class="hero-video">
-        <source src="https://media.istockphoto.com/id/1479313083/video/4k-aerial-view-real-time-footage-of-above-captain-cook-bridge-pacific-and-riverside.mp4?s=mp4-640x640-is&k=20&c=1fagShgRX86WyOXiuZY9SKLYrmQJM2eK64JJgrw_CQE=" type="video/mp4">
-        Your browser does not support the video tag.
+        <source src="YOUR_VIDEO_URL_HERE" type="video/mp4">
     </video>
+
     <div class="hero-content">
         <h1>ANVESH PROPERTIES</h1>
     </div>
-</header>
 
+</header>
 
 
 
