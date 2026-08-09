@@ -250,6 +250,438 @@
 	</div>
 					
                     <a href="#contact" class="nav-item">Contact</a>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ENQUIRY NOW BUTTON -->
+<a href="javascript:void(0);" class="nav-item enquiry-btn" onclick="openEnquiryForm()">
+    ENQUIRY NOW
+</a>
+
+<!-- ENQUIRY POPUP -->
+<div id="enquiryModal" class="enquiry-modal">
+
+    <div class="enquiry-box">
+
+        <!-- Close Button -->
+        <span class="enquiry-close" onclick="closeEnquiryForm()">&times;</span>
+
+        <div class="enquiry-header">
+            <h2>Property Enquiry</h2>
+            <p>Tell us what you're looking for and our property expert will contact you.</p>
+        </div>
+
+        <form id="propertyEnquiryForm">
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" name="phone" placeholder="Enter phone number" required>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Enquiry Type *</label>
+                    <select name="enquiry_type" required>
+                        <option value="">Select enquiry type</option>
+                        <option value="Buy Property">Buy Property</option>
+                        <option value="Rent Property">Rent Property</option>
+                        <option value="Sell Property">Sell Property</option>
+                        <option value="Property Management">Property Management</option>
+                        <option value="Investment">Property Investment</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label>Property Type</label>
+                    <select name="property_type">
+                        <option value="">Select property type</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="House">House</option>
+                        <option value="Villa">Villa</option>
+                        <option value="Land">Land</option>
+                        <option value="Commercial">Commercial Property</option>
+                        <option value="Office">Office</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Budget</label>
+                    <input type="text" name="budget" placeholder="e.g. $500,000">
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label>Preferred Location</label>
+                <input type="text" name="location" placeholder="Enter preferred location">
+            </div>
+
+            <div class="form-group">
+                <label>Message</label>
+                <textarea name="message" rows="4" placeholder="Tell us about your property requirements..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-enquiry">
+                SUBMIT ENQUIRY
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+
+<!-- POPUP CSS -->
+<style>
+
+.enquiry-btn {
+    background: #f47721 !important;
+    color: #ffffff !important;
+    padding: 12px 25px !important;
+    border-radius: 30px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    display: inline-block;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.enquiry-btn:hover {
+    background: #d95f0d !important;
+    transform: translateY(-2px);
+}
+
+
+/* Popup Background */
+
+.enquiry-modal {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.70);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+/* Popup Box */
+
+.enquiry-box {
+    background: #ffffff;
+    width: 100%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    border-radius: 12px;
+    position: relative;
+
+    padding: 35px;
+    box-sizing: border-box;
+
+    box-shadow: 0 15px 50px rgba(0,0,0,0.30);
+
+    animation: enquiryPopup 0.3s ease;
+}
+
+
+/* Popup Animation */
+
+@keyframes enquiryPopup {
+
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* Close Button */
+
+.enquiry-close {
+    position: absolute;
+    right: 20px;
+    top: 12px;
+
+    font-size: 32px;
+    font-weight: bold;
+
+    color: #555;
+
+    cursor: pointer;
+
+    line-height: 1;
+}
+
+.enquiry-close:hover {
+    color: #f47721;
+}
+
+
+/* Header */
+
+.enquiry-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.enquiry-header h2 {
+    margin: 0 0 8px;
+    color: #17233c;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.enquiry-header p {
+    margin: 0;
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* Form */
+
+.form-row {
+    display: flex;
+    gap: 18px;
+}
+
+.form-group {
+    flex: 1;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    font-family: inherit;
+
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color: #f47721;
+
+    box-shadow: 0 0 0 2px rgba(244,119,33,0.10);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+/* Submit Button */
+
+.submit-enquiry {
+
+    width: 100%;
+
+    background: #f47721;
+    color: white;
+
+    border: none;
+
+    padding: 14px;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: background 0.3s;
+}
+
+.submit-enquiry:hover {
+    background: #d95f0d;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .enquiry-box {
+        padding: 25px 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .enquiry-header h2 {
+        font-size: 23px;
+    }
+
+    .enquiry-btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+}
+
+</style>
+
+
+<!-- POPUP JAVASCRIPT -->
+<script>
+
+function openEnquiryForm() {
+
+    document.getElementById("enquiryModal").style.display = "flex";
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+function closeEnquiryForm() {
+
+    document.getElementById("enquiryModal").style.display = "none";
+
+    document.body.style.overflow = "auto";
+
+}
+
+
+/* Close popup when clicking outside */
+
+window.addEventListener("click", function(event) {
+
+    const modal = document.getElementById("enquiryModal");
+
+    if (event.target === modal) {
+
+        closeEnquiryForm();
+
+    }
+
+});
+
+
+/* Close popup using ESC key */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        closeEnquiryForm();
+
+    }
+
+});
+
+
+/* Form submit */
+
+document.getElementById("propertyEnquiryForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    alert("Thank you! Your property enquiry has been submitted.");
+
+    this.reset();
+
+    closeEnquiryForm();
+
+});
+
+</script>
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
                 </div>
 
 
@@ -373,7 +805,7 @@ header.hero {
 
 <button class="enquiry-cta-btn" onclick="toggleModal(true)">
     Enquiry Now
-	<a href="contact.html" class="enquiry-btn">ENQUIRY NOW</a>
+	
 </button>
 			
 
