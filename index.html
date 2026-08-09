@@ -251,10 +251,7 @@
 					
            <a href="#contact" class="nav-item">Contact</a>
 
-<!-- ENQUIRY NOW BUTTON -->
-<button type="button" id="enquiryButton" onclick="openEnquiryForm()">
-    ENQUIRY NOW
-</button>
+
 
 
 
@@ -410,448 +407,250 @@ header.hero {
 
 
 
-<!-- =========================
-     ENQUIRY POPUP
-========================= -->
+<!-- ENQUIRY NOW BUTTON -->
+<a href="javascript:void(0);" class="nav-item enquiry-btn" onclick="openEnquiryForm()">
+    ENQUIRY NOW
+</a>
 
+<!-- ENQUIRY POPUP -->
 <div id="enquiryModal" class="enquiry-modal">
 
     <div class="enquiry-box">
 
-        <!-- CLOSE BUTTON -->
+        <!-- Close Button -->
         <span class="enquiry-close" onclick="closeEnquiryForm()">&times;</span>
 
-        <!-- HEADER -->
         <div class="enquiry-header">
             <h2>Property Enquiry</h2>
-            <p>
-                Tell us what you're looking for and our property expert
-                will contact you.
-            </p>
+            <p>Tell us what you're looking for and our property expert will contact you.</p>
         </div>
 
-        <!-- FORM -->
         <form id="propertyEnquiryForm">
 
-            <!-- NAME + PHONE -->
             <div class="form-row">
 
                 <div class="form-group">
                     <label>Full Name *</label>
-                    <input 
-                        type="text" 
-                        name="name" 
-                        placeholder="Enter your name" 
-                        required
-                    >
+                    <input type="text" name="name" placeholder="Enter your name" required>
                 </div>
 
                 <div class="form-group">
                     <label>Phone Number *</label>
-                    <input 
-                        type="tel" 
-                        name="phone" 
-                        placeholder="Enter phone number" 
-                        required
-                    >
+                    <input type="tel" name="phone" placeholder="Enter phone number" required>
                 </div>
 
             </div>
 
-
-            <!-- EMAIL + ENQUIRY TYPE -->
             <div class="form-row">
 
                 <div class="form-group">
                     <label>Email Address *</label>
-                    <input 
-                        type="email" 
-                        name="email" 
-                        placeholder="Enter your email" 
-                        required
-                    >
+                    <input type="email" name="email" placeholder="Enter your email" required>
                 </div>
 
                 <div class="form-group">
                     <label>Enquiry Type *</label>
-
                     <select name="enquiry_type" required>
-
-                        <option value="">
-                            Select enquiry type
-                        </option>
-
-                        <option value="Buy Property">
-                            Buy Property
-                        </option>
-
-                        <option value="Rent Property">
-                            Rent Property
-                        </option>
-
-                        <option value="Sell Property">
-                            Sell Property
-                        </option>
-
-                        <option value="Property Management">
-                            Property Management
-                        </option>
-
-                        <option value="Investment">
-                            Property Investment
-                        </option>
-
-                        <option value="Other">
-                            Other
-                        </option>
-
+                        <option value="">Select enquiry type</option>
+                        <option value="Buy Property">Buy Property</option>
+                        <option value="Rent Property">Rent Property</option>
+                        <option value="Sell Property">Sell Property</option>
+                        <option value="Property Management">Property Management</option>
+                        <option value="Investment">Property Investment</option>
+                        <option value="Other">Other</option>
                     </select>
-
                 </div>
 
             </div>
 
-
-            <!-- PROPERTY TYPE + BUDGET -->
             <div class="form-row">
 
                 <div class="form-group">
-
                     <label>Property Type</label>
-
                     <select name="property_type">
-
-                        <option value="">
-                            Select property type
-                        </option>
-
-                        <option value="Apartment">
-                            Apartment
-                        </option>
-
-                        <option value="House">
-                            House
-                        </option>
-
-                        <option value="Villa">
-                            Villa
-                        </option>
-
-                        <option value="Land">
-                            Land
-                        </option>
-
-                        <option value="Commercial Property">
-                            Commercial Property
-                        </option>
-
-                        <option value="Office">
-                            Office
-                        </option>
-
+                        <option value="">Select property type</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="House">House</option>
+                        <option value="Villa">Villa</option>
+                        <option value="Land">Land</option>
+                        <option value="Commercial">Commercial Property</option>
+                        <option value="Office">Office</option>
                     </select>
-
                 </div>
-
 
                 <div class="form-group">
-
                     <label>Budget</label>
-
-                    <input 
-                        type="text" 
-                        name="budget" 
-                        placeholder="e.g. ₹50,00,000"
-                    >
-
+                    <input type="text" name="budget" placeholder="e.g. $500,000">
                 </div>
 
             </div>
 
-
-            <!-- LOCATION -->
             <div class="form-group">
-
                 <label>Preferred Location</label>
-
-                <input 
-                    type="text" 
-                    name="location" 
-                    placeholder="Enter preferred location"
-                >
-
+                <input type="text" name="location" placeholder="Enter preferred location">
             </div>
 
-
-            <!-- MESSAGE -->
             <div class="form-group">
-
                 <label>Message</label>
-
-                <textarea 
-                    name="message" 
-                    rows="4" 
-                    placeholder="Tell us about your property requirements..."
-                ></textarea>
-
+                <textarea name="message" rows="4" placeholder="Tell us about your property requirements..."></textarea>
             </div>
 
-
-            <!-- SUBMIT -->
-            <button 
-                type="submit" 
-                class="submit-enquiry">
+            <button type="submit" class="submit-enquiry">
                 SUBMIT ENQUIRY
             </button>
 
         </form>
 
     </div>
-
 </div>
 
 
-<!-- =========================
-     ENQUIRY CSS
-========================= -->
-
+<!-- POPUP CSS -->
 <style>
 
-/* ENQUIRY NOW BUTTON */
-
 .enquiry-btn {
-
-    display: inline-block;
-
-    background: #f47721;
-
+    background: #f47721 !important;
     color: #ffffff !important;
-
-    padding: 13px 26px;
-
-    margin-left: 15px;
-
-    border-radius: 30px;
-
+    padding: 12px 25px !important;
+    border-radius: 30px !important;
+    font-weight: 700 !important;
     text-decoration: none !important;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
+    display: inline-block;
+    margin-left: 15px;
     cursor: pointer;
-
     transition: all 0.3s ease;
-
-    border: none;
-
 }
-
 
 .enquiry-btn:hover {
-
-    background: #d95f0d;
-
-    color: #ffffff !important;
-
+    background: #d95f0d !important;
     transform: translateY(-2px);
-
 }
 
 
-/* POPUP BACKGROUND */
+/* Popup Background */
 
 .enquiry-modal {
-
     display: none;
-
     position: fixed;
-
-    z-index: 999999;
-
+    z-index: 99999;
     left: 0;
-
     top: 0;
-
     width: 100%;
-
     height: 100%;
-
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.70);
 
     align-items: center;
-
     justify-content: center;
 
     padding: 20px;
-
     box-sizing: border-box;
-
 }
 
 
-/* POPUP BOX */
+/* Popup Box */
 
 .enquiry-box {
-
-    position: relative;
-
+    background: #ffffff;
     width: 100%;
-
     max-width: 700px;
-
     max-height: 90vh;
-
     overflow-y: auto;
 
-    background: #ffffff;
+    border-radius: 12px;
+    position: relative;
 
     padding: 35px;
-
-    border-radius: 12px;
-
     box-sizing: border-box;
 
-    box-shadow: 0 15px 50px rgba(0,0,0,0.35);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.30);
 
     animation: enquiryPopup 0.3s ease;
-
 }
 
 
-/* POPUP ANIMATION */
+/* Popup Animation */
 
 @keyframes enquiryPopup {
 
     from {
-
         opacity: 0;
-
         transform: translateY(-30px) scale(0.95);
-
     }
 
     to {
-
         opacity: 1;
-
         transform: translateY(0) scale(1);
-
     }
 
 }
 
 
-/* CLOSE BUTTON */
+/* Close Button */
 
 .enquiry-close {
-
     position: absolute;
-
     right: 20px;
-
     top: 12px;
 
     font-size: 32px;
-
     font-weight: bold;
 
     color: #555;
 
     cursor: pointer;
 
+    line-height: 1;
 }
-
 
 .enquiry-close:hover {
-
     color: #f47721;
-
 }
 
 
-/* HEADER */
+/* Header */
 
 .enquiry-header {
-
     text-align: center;
-
     margin-bottom: 25px;
-
 }
-
 
 .enquiry-header h2 {
-
     margin: 0 0 8px;
-
     color: #17233c;
-
     font-size: 28px;
-
     font-weight: 700;
-
 }
-
 
 .enquiry-header p {
-
     margin: 0;
-
     color: #777;
-
     font-size: 14px;
-
-    line-height: 1.5;
-
 }
 
 
-/* FORM ROW */
+/* Form */
 
 .form-row {
-
     display: flex;
-
     gap: 18px;
-
 }
-
-
-/* FORM GROUP */
 
 .form-group {
-
     flex: 1;
-
     margin-bottom: 18px;
-
 }
 
-
-/* LABEL */
-
 .form-group label {
-
     display: block;
-
     margin-bottom: 7px;
 
     color: #333;
-
     font-size: 14px;
-
     font-weight: 600;
-
 }
 
-
-/* INPUT / SELECT / TEXTAREA */
-
 .form-group input,
-
 .form-group select,
-
 .form-group textarea {
 
     width: 100%;
@@ -859,55 +658,41 @@ header.hero {
     padding: 12px 14px;
 
     border: 1px solid #ddd;
-
     border-radius: 6px;
 
     font-size: 14px;
-
-    font-family: inherit;
 
     outline: none;
 
     box-sizing: border-box;
 
-    transition: 0.2s;
+    font-family: inherit;
 
+    transition: border-color 0.2s;
 }
 
-
-/* FOCUS */
-
 .form-group input:focus,
-
 .form-group select:focus,
-
 .form-group textarea:focus {
 
     border-color: #f47721;
 
     box-shadow: 0 0 0 2px rgba(244,119,33,0.10);
-
 }
-
-
-/* TEXTAREA */
 
 .form-group textarea {
-
     resize: vertical;
-
 }
 
 
-/* SUBMIT BUTTON */
+/* Submit Button */
 
 .submit-enquiry {
 
     width: 100%;
 
     background: #f47721;
-
-    color: #ffffff;
+    color: white;
 
     border: none;
 
@@ -916,60 +701,38 @@ header.hero {
     border-radius: 6px;
 
     font-size: 15px;
-
     font-weight: 700;
 
     cursor: pointer;
 
-    transition: 0.3s;
-
+    transition: background 0.3s;
 }
-
 
 .submit-enquiry:hover {
-
     background: #d95f0d;
-
 }
 
 
-/* MOBILE */
+/* Mobile */
 
 @media (max-width: 600px) {
 
-    .enquiry-btn {
-
-        margin-left: 5px;
-
-        padding: 10px 15px;
-
-        font-size: 12px;
-
-    }
-
-
     .enquiry-box {
-
         padding: 25px 20px;
-
-        max-height: 90vh;
-
     }
-
 
     .form-row {
-
         flex-direction: column;
-
         gap: 0;
-
     }
 
-
     .enquiry-header h2 {
-
         font-size: 23px;
+    }
 
+    .enquiry-btn {
+        margin-left: 0;
+        margin-top: 10px;
     }
 
 }
@@ -977,10 +740,7 @@ header.hero {
 </style>
 
 
-<!-- =========================
-     WHATSAPP JAVASCRIPT
-========================= -->
-
+<!-- POPUP JAVASCRIPT -->
 <script>
 
 function openEnquiryForm() {
@@ -1001,11 +761,11 @@ function closeEnquiryForm() {
 }
 
 
-/* CLOSE WHEN CLICKING OUTSIDE */
+/* Close popup when clicking outside */
 
 window.addEventListener("click", function(event) {
 
-    var modal = document.getElementById("enquiryModal");
+    const modal = document.getElementById("enquiryModal");
 
     if (event.target === modal) {
 
@@ -1016,7 +776,7 @@ window.addEventListener("click", function(event) {
 });
 
 
-/* CLOSE WITH ESC KEY */
+/* Close popup using ESC key */
 
 document.addEventListener("keydown", function(event) {
 
@@ -1029,80 +789,17 @@ document.addEventListener("keydown", function(event) {
 });
 
 
-/* SUBMIT FORM TO WHATSAPP */
+/* Form submit */
 
 document.getElementById("propertyEnquiryForm").addEventListener("submit", function(event) {
 
     event.preventDefault();
 
+    alert("Thank you! Your property enquiry has been submitted.");
 
-    /* GET FORM VALUES */
+    this.reset();
 
-    var name =
-        document.querySelector('[name="name"]').value;
-
-    var phone =
-        document.querySelector('[name="phone"]').value;
-
-    var email =
-        document.querySelector('[name="email"]').value;
-
-    var enquiryType =
-        document.querySelector('[name="enquiry_type"]').value;
-
-    var propertyType =
-        document.querySelector('[name="property_type"]').value;
-
-    var budget =
-        document.querySelector('[name="budget"]').value;
-
-    var location =
-        document.querySelector('[name="location"]').value;
-
-    var message =
-        document.querySelector('[name="message"]').value;
-
-
-    /* CREATE WHATSAPP MESSAGE */
-
-    var whatsappMessage =
-        "*NEW PROPERTY ENQUIRY*%0A%0A" +
-
-        "*Name:* " + name + "%0A" +
-
-        "*Phone:* " + phone + "%0A" +
-
-        "*Email:* " + email + "%0A%0A" +
-
-        "*Enquiry Type:* " + enquiryType + "%0A" +
-
-        "*Property Type:* " + propertyType + "%0A" +
-
-        "*Budget:* " + budget + "%0A" +
-
-        "*Preferred Location:* " + location + "%0A%0A" +
-
-        "*Message:*%0A" + message;
-
-
-    /* YOUR WHATSAPP NUMBER */
-
-    var whatsappNumber = "918001900148";
-
-
-    /* WHATSAPP LINK */
-
-    var whatsappURL =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        whatsappMessage;
-
-
-    /* OPEN WHATSAPP */
-
-    window.open(whatsappURL, "_blank");
-
+    closeEnquiryForm();
 
 });
 
