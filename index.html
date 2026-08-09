@@ -140,18 +140,26 @@
     }
 
     /* Force video to cover the entire container seamlessly */
-    .hero-video {
-        position: absolute !important;
-        top: 50% !important;
-        left: 50% !important;
-        min-width: 100% !important;
-        min-height: 100% !important;
-        width: 100% !important;
-        height: 100% !important;
-        transform: translate(-50%, -50%) !important;
-        object-fit: cover !important; /* Stretches/crops video proportionally to remove white bars */
-        z-index: 1 !important;
-    }
+.hero-video {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    min-width: 100% !important;
+    min-height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: translate(-50%, -50%) !important;
+    object-fit: cover !important;
+
+    display: block !important;
+    z-index: 1 !important;
+}
 
     .hero-overlay {
         position: absolute !important;
@@ -4488,15 +4496,14 @@ header.hero {
     box-sizing: border-box !important;
 }
 
-.hero-video {
-    display: block !important;
-    width: 100% !important;
-    height: 100% !important;
-    min-width: 100% !important;
-    min-height: 100% !important;
+header.hero {
+    position: relative !important;
+    width: 100vw !important;
+    height: 70vh !important;
+    min-height: 500px !important;
     margin: 0 !important;
     padding: 0 !important;
-    object-fit: cover !important;
+    overflow: hidden !important;
 }
 
 .hero-overlay {
